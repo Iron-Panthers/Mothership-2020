@@ -24,7 +24,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Drive extends Subsystem {
 	private SparkMaxMotorGroup left = Robot.hardware.leftDriveMotors;
 	private SparkMaxMotorGroup right = Robot.hardware.rightDriveMotors;
-	public Solenoid gearShift = Robot.hardware.gearShift;
 	public GearState state;
 	public boolean isReversed;
 
@@ -104,7 +103,6 @@ public class Drive extends Subsystem {
 	 */
 	public void shiftLow() {
 		state = GearState.HIGH; // Tested 2/19/2019
-		gearShift.set(true);
 	}
 
 	/**
@@ -112,7 +110,6 @@ public class Drive extends Subsystem {
 	 */
 	public void shiftHigh() {
 		state = GearState.LOW; // Tested 2/19/2019
-		gearShift.set(false);
 	}
 
 	@Override

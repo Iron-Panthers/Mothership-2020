@@ -37,7 +37,7 @@ public class ArcadeDrive extends Command {
 		double[] powers = { leftPower, rightPower };
 		powers = scalePower(powers);
 
-		Robot.IS_BABY_PROOFED = determineBabyMode(driver2Stick);
+		Robot.IS_BABY_PROOFED = true; /*determineBabyMode(driver2Stick);*/
 		// Uses ScalePower method to scale the power of both sides if either is over 1
 		if (!Robot.IS_BABY_PROOFED){
 			Robot.drive.set(powers[0], powers[1]);

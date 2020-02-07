@@ -113,7 +113,7 @@ public class Constants {
 		public static final int HATCH_PISTON_SOLENOID_PORT = 2;
 		public static final int HATCH_EXTENDER_PISTON_SOLENOID_PORT = 0;
 
-		public static final boolean IS_INTAKE_INVERTED = true;
+		public static final boolean IS_INTAKE_INVERTED = false;
 
 		// INTAKE JOYSTICK - TODO Tune To Driver Preference
 		public static final double Y_DEADZONE = 0.1;

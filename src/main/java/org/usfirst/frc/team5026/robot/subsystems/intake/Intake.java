@@ -23,12 +23,9 @@ public class Intake extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public TalonSRX intakeMotor;
-	public Solenoid hatchPiston, hatchExtenderPistons;
 
 	public Intake() {
 		intakeMotor = Robot.hardware.armIntakeMotor;
-		hatchPiston = Robot.hardware.hatchPiston;
-		hatchExtenderPistons = Robot.hardware.hatchExtenderPistons;
 	}
 
 	public void setIntakePower(double power) {
@@ -43,7 +40,6 @@ public class Intake extends Subsystem {
 	 * Extends hatch piston to hold onto the hatch
 	 */
 	public void hatchIntake() { // TODO: Test
-		hatchPiston.set(false);
 
 		// Only functional with DoubleSolenoid:
 		// hatchPiston.set(DoubleSolenoid.Value.kForward);
@@ -53,18 +49,15 @@ public class Intake extends Subsystem {
 	 * Retracts hatch piston to let go of hatch/prepare to grab one
 	 */
 	public void hatchOuttake() { // TODO: Test
-		hatchPiston.set(true);
 
 		// Only functional with DoubleSolenoid:
 		// hatchPiston.set(DoubleSolenoid.Value.kReverse);
 	}
 
 	public void extendHatchPistons() {
-		hatchExtenderPistons.set(true);
 	}
 
 	public void retractHatchPistons() {
-		hatchExtenderPistons.set(false);
 	}
 
 	public double getCurrent() {

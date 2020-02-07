@@ -29,7 +29,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Climb extends Subsystem {
 	public SparkMaxMotorGroup climbMotors;
     public TalonSRX trainingWheelMotor, leftWinch, rightWinch;
-	public Solenoid superStructurePistons, trainingWheelPiston;
 	public DigitalInput topLimitSwitch, bottomLimitSwitch;
 
 	public Climb() {
@@ -37,7 +36,6 @@ public class Climb extends Subsystem {
 		this.trainingWheelMotor = Robot.hardware.trainingWheelMotor;
 		this.leftWinch = Robot.hardware.leftWinchMotor;
 		this.rightWinch = Robot.hardware.rightWinchMotor;
-		this.superStructurePistons = Robot.hardware.superStructurePistons;
 		this.topLimitSwitch = Robot.hardware.forwardLimit;
 		this.bottomLimitSwitch = Robot.hardware.reverseLimit;
 	}
@@ -158,14 +156,12 @@ public class Climb extends Subsystem {
 	 * Extends the superstructure pistons.
 	 */
 	public void extendSuperStructurePistons() {
-		superStructurePistons.set(true);
 	}
 
 	/**
 	 * Retracts the superstructure pistons.
 	 */
 	public void retractSuperStructurePistons() {
-		superStructurePistons.set(false);
 	}
 
 	/**

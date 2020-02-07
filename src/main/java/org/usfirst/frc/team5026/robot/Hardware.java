@@ -53,11 +53,6 @@ public class Hardware {
 
 	public SparkMaxMotorGroup climbMotors;
 
-	public Solenoid superStructurePistons;
-	public Solenoid hatchPiston;
-	public Solenoid hatchExtenderPistons;
-	public Solenoid gearShift;
-
 	/** Motors/sensors for other subsystems will go down here */
 
 	public Hardware() {
@@ -127,9 +122,5 @@ public class Hardware {
 											// all the way (elevator up all the way) //
 											// rightMotor3.getReverseLimitSwitch(LimitSwitchPolarity.kNormallyClosed);
 
-		superStructurePistons = new Solenoid(Constants.Climb.SUPER_STRUCTURE_SOLENOID_PORT);
-		hatchPiston = new Solenoid(Constants.IntakeArm.HATCH_PISTON_SOLENOID_PORT);
-		hatchExtenderPistons = new Solenoid(Constants.IntakeArm.HATCH_EXTENDER_PISTON_SOLENOID_PORT);
-		gearShift = new Solenoid(Constants.Drivebase.GEAR_SHIFT_PORT);
 	}
 }
