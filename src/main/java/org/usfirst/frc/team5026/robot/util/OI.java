@@ -45,7 +45,7 @@ public class OI {
 	JoystickButton climbWithJoystick;
 	JoystickButton extendSuperStructurePistons, retractSuperStructurePistons;
 	JoystickButton climbUp, climbDown;
-	JoystickButton trainingWheelsForward, slowTrainingWheelsForward;
+	JoystickButton trainingWheelsForward, slowTrainingWheelsForward, trainingWheelsBackward;
 	JoystickButton cancelClimb;
 
 	public OI() {
@@ -65,6 +65,9 @@ public class OI {
 		lowerLeftWinch = new JoystickButton(stick1, Constants.Input.LOWER_LEFT_WINCH);
 		raiseRightWinch = new JoystickButton(stick1, Constants.Input.RAISE_RIGHT_WINCH);
 		lowerRightWinch = new JoystickButton(stick1, Constants.Input.LOWER_RIGHT_WINCH);
+
+		//Baby mode for drivebase
+		
 
 		// Assign commands to each of the buttons for driver 1
 		reverseDrive.whileHeld(new ReverseDrive());
@@ -99,7 +102,7 @@ public class OI {
 				new ArmToTarget((Constants.IntakeArm.CARGO_SHIP_HEIGHT - Constants.IntakeArm.CARGO_DIAMETER), false));
 		rocketLowHeight.whenPressed(new ArmToTarget(Constants.IntakeArm.ROCKET_LOW_HEIGHT, true));
 		lowestHeight.whenPressed(new ArmToTarget(Constants.IntakeArm.BASE_ANGLE_OFFSET));
-		intake.toggleWhenPressed(new IntakeCargo());
+		intake.whileHeld(new IntakeCargo());
 		outtake.whileHeld(new OuttakeCargo(Constants.IntakeArm.OUTTAKE_POWER));
 		hatchIntake.whenPressed(new IntakeHatch());
 		hatchOuttake.whenPressed(new OuttakeHatch(Constants.IntakeArm.RETRACT_HATCH_PISTON_DELAY));
@@ -115,6 +118,7 @@ public class OI {
 		retractSuperStructurePistons = new JoystickButton(stick3,
 				Constants.Input.RETRACT_SUPER_STRUCTURE_PISTONS_BUTTON);
 		trainingWheelsForward = new JoystickButton(stick3, Constants.Input.TRAINING_WHEELS_FORWARD_BUTTON);
+		trainingWheelsBackward = new JoystickButton(stick3, Constants.Input.TRAINING_WHEELS_BACKWARD_BUTTON);
 		cancelClimb = new JoystickButton(stick3, Constants.Input.CANCEL_CLIMB_BUTTON);
 
 		// Assign commands to each of the button for Climb Joystick

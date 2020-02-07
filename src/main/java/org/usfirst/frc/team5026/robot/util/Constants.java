@@ -25,6 +25,9 @@ public class Constants {
 		public static final double TURN_SENSITIVITY = 1;
 		public static final double RADIAL_TURN_SENSITIVITY = 20;
 		public static final double RAMP_RATE = 0.25; // Seconds to go from 0 to full throttle
+		public static final boolean IS_BABY_PROOFED = true;
+		public static final boolean BABY_PROOF_REVERSE_DRIVE = true;
+		public static final double BABY_PROOF_MODIFIER = 0.15;
 
 		// Max Velocity in RPM
 		// Low gear (High RPM, low robot speed) // Tested 3/20/2019 by James
@@ -36,7 +39,7 @@ public class Constants {
 
 		// Motion Profiling PID (For Velocity)
 		public static final double F = 0; // TODO Find max velocity
-		public static final double P = 0; // TODO Tune
+		public static final double P = 0.1; // TODO Tune
 		public static final double I = 0;
 		public static final double D = 0;
 
@@ -89,11 +92,12 @@ public class Constants {
 		public static final int CLIMB_UP_BUTTON = 6;
 		public static final int TRAINING_WHEELS_SLOW_FORWARD_BUTTON = 7;
 		public static final int TRAINING_WHEELS_FORWARD_BUTTON = 8;
+		public static final int TRAINING_WHEELS_BACKWARD_BUTTON = 10;
 		public static final int RETRACT_SUPER_STRUCTURE_PISTONS_BUTTON = 11; // MAYBE NOT
 		public static final int EXTEND_SUPER_STRUCURE_PISTONS_BUTTON = 12;
 
 		/** OTHER INPUT CONSTANTS */
-		public static final double JOYSTICK_DEADBAND = 0.1;
+		public static final double JOYSTICK_DEADBAND = 0.24;
 		public static final double VERTICAL_BOWTIE_DEADZONE_SLOPE = 10;
 		public static final double HORIZONTAL_BOWTIE_DEADZONE_SLOPE = 10;
 		public static final double JOYSTICK_DEADZONE_CIRCLE = 0.14;
